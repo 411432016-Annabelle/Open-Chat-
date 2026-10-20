@@ -147,3 +147,8 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Key / rahasia proyek Open Chat (lihat docs/architecture.md bagian 8)
+# Jangan pernah commit file ini. Hanya .env.example (tanpa nilai) yang boleh.
+.env.local
+.env.*.local
