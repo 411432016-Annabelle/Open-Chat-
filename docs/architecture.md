@@ -105,7 +105,7 @@ didapat langsung dari Supabase. GitHub Pages tidak pernah menyentuh isi chat.
 | Framework | **React** — **framework** (kerangka kerja siap pakai) untuk membuat tampilan dari potongan-potongan kecil bernama **komponen** (misalnya "gelembung pesan" atau "daftar online"). | Layar chat punya banyak bagian yang berubah bersamaan. React otomatis memperbarui bagian yang datanya berubah saja. Komunitasnya sangat besar, jadi mudah mencari bantuan. |
 | Alat build | **Vite** — alat yang mengubah kode kita menjadi file website biasa (proses ini disebut **build**). | Hasilnya file statis yang cocok untuk GitHub Pages, dan prosesnya cepat. |
 | Gaya tampilan | **CSS** (bahasa untuk mengatur warna, ukuran, dan tata letak) dengan satu file tema berisi warna pastel. | Warna dan gaya ditentukan lewat `/design`. Satu file tema memudahkan penggantian warna di seluruh website sekaligus. |
-| Maskot & avatar | **SVG** (gambar yang dibuat dari garis dan bentuk sehingga tetap tajam di layar sebesar apa pun) + animasi CSS. | Ringan, tajam di HP, dan bisa dianimasikan (berkedip, melompat, melambai, menangis). |
+| Maskot & avatar | **SVG** (gambar yang dibuat dari garis dan bentuk sehingga tetap tajam di layar sebesar apa pun) + animasi CSS, digambar langsung oleh komponen React (bukan file gambar terpisah). Bunyi notifikasi juga dibuat langsung oleh browser (Web Audio), jadi tidak ada file suara. | Ringan, tajam di HP, warnanya bisa diganti per avatar, dan bisa dianimasikan (berkedip, melompat, melambai, menangis). |
 | Terjemahan | Tiga file kamus sederhana: Indonesia, Inggris, Mandarin tradisional. | Cukup untuk tiga bahasa, tanpa perlu tambahan yang berat. |
 | Penyimpanan di browser | **localStorage** — "laci kecil" di browser yang menyimpan catatan untuk website ini saja, dan tetap ada setelah tab ditutup. | Untuk mengingat nama dan avatar terakhir, bahasa, bunyi nyala/mati, pesan atau orang yang disembunyikan, dan waktu kick. |
 
@@ -574,15 +574,15 @@ harga Supabase dan GitHub untuk angka terbaru.
 Open-Chat-/
 ├─ docs/
 │  ├─ requirements.md          ← kebutuhan
-│  └─ architecture.md          ← dokumen ini
+│  ├─ architecture.md          ← dokumen ini
+│  └─ design.md                ← ringkasan desain layar
 ├─ public/                     ← file yang disalin apa adanya ke website
-│  ├─ avatars/                 ← 6–8 gambar SVG avatar
-│  ├─ stickers/                ← gambar stiker
-│  └─ sounds/                  ← bunyi notifikasi
+│  └─ favicon.svg              ← ikon tab browser
 ├─ src/                        ← kode website
 │  ├─ main.tsx                 ← titik awal website
 │  ├─ App.tsx                  ← memilih layar mana yang tampil
-│  ├─ theme.css                ← warna pastel & font (diisi dari /design)
+│  ├─ theme.css                ← warna pastel & font (dari docs/design.md)
+│  ├─ styles.css               ← gaya semua layar
 │  ├─ i18n/                    ← kamus bahasa: id, en, zh-TW
 │  ├─ chat/                    ← SATU-SATUNYA tempat yang tahu soal chat
 │  │  ├─ ChatService.ts        ← "colokan": daftar perintah & event (bagian 5)
@@ -595,7 +595,8 @@ Open-Chat-/
 │  │                             Daftar Online, Kotak Tulis, Pemilih Stiker,
 │  │                             Pratinjau Gambar, Lightbox, Toast, dll.
 │  └─ lib/                     ← alat bantu: localStorage, aturan nama,
-│                                memperkecil gambar, bunyi, judul tab
+│                                data avatar & stiker, memperkecil gambar,
+│                                bunyi, judul tab, sembunyikan/blokir
 ├─ supabase/
 │  └─ migrations/              ← (tahap 2) perintah SQL untuk membuat tabel,
 │                                trigger, RLS, dan aturan Storage

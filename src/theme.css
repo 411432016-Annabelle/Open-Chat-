@@ -1,0 +1,84 @@
+/* Warna, huruf, dan bentuk dari docs/design.md (bagian 2–4).
+   Ganti di sini untuk mengubah tampilan seluruh website sekaligus. */
+:root {
+  /* Latar & permukaan */
+  --bg: #fff3f6;
+  --bg-soft: #fff7fa;
+  --bg-soft-2: #fff9fb;
+  --surface: #ffffff;
+  --line: #f3d9e2;
+  --shadow-pink: #f6cfdc;
+
+  /* Teks */
+  --ink: #4a2f3a;
+  --ink-2: #6b4a58;
+  --ink-3: #7a5866;
+  --ink-deep: #3e2230;
+  --link: #9b3d63;
+
+  /* Pink */
+  --pink: #ee8fb0;
+  --pink-shadow: #d46f93;
+  --pink-soft: #fbdce6;
+  --pink-pale: #ffe3ec;
+  --pink-select: #e5799e;
+  --pink-disabled: #f6dce5;
+  --pink-disabled-ink: #8c6b78;
+  --bubble-mine: #ffd6e3;
+  --bubble-mine-line: #ffc4d6;
+  --muted-btn: #f5eef1;
+
+  /* Admin / kuning */
+  --gold: #f2c14e;
+  --gold-line: #9a6b0e;
+  --gold-soft: #fff4d6;
+  --gold-ink: #5c430a;
+  --bubble-admin: #fff6dc;
+  --bubble-admin-line: #f4dc9a;
+
+  /* Mint */
+  --mint: #d3f1e3;
+  --mint-pale: #e6f7ef;
+  --mint-strong: #bfe7d3;
+  --mint-ink: #1f5b40;
+  --mint-dot: #3fae7c;
+
+  /* Biru Crybaby */
+  --blue: #d6eefb;
+  --blue-pale: #eef7fd;
+  --blue-shadow: #c9e4f5;
+  --blue-ink: #2f5e7a;
+
+  /* Lavender */
+  --lavender: #e9e0fb;
+  --lavender-pale: #f6f1fe;
+  --lavender-strong: #cdbaf3;
+  --lavender-ink: #3b2752;
+
+  /* Status */
+  --warn-bg: #fff1d6;
+  --warn-ink: #5e420a;
+  --warn-shadow: #f2ddae;
+  --error-ink: #a3294f;
+  --error-ink-2: #8e2347;
+  --error-bg: #ffe8ee;
+  --error-field: #fff0f3;
+  --error-line: #d4547f;
+  --danger: #b8406a;
+  --danger-shadow: #8a2a4d;
+  --dark-btn: #4a2f3a;
+  --dark-btn-shadow: #2e1c24;
+
+  /* Huruf */
+  --font-display: 'Baloo 2', 'Nunito', system-ui, sans-serif;
+  --font-body: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Sudut */
+  --r-card: 28px;
+  --r-panel: 26px;
+  --r-btn: 18px;
+  --r-icon: 16px;
+  --r-pill: 999px;
+
+  --focus: #9b3d63;
+}
